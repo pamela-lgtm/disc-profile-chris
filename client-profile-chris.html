@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Client Working Profile — Chris | Verandah Properties</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --teal:#008C82;--teal-deep:#00655E;--gold:#C9A227;--charcoal:#1A1A1A;
+    --ink:#2E3330;--muted:#6E7671;--rule:#DCE3E0;--paper:#FFFFFF;--wash:#F4F7F6;
+    --alert:#9B3B2E;--alert-bg:#FBF2F0;--good:#2F6B5E;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--paper);color:var(--ink);
+    font-family:'Jost',system-ui,sans-serif;font-weight:300;font-size:16px;line-height:1.7;
+    -webkit-font-smoothing:antialiased;}
+  .wrap{max-width:960px;margin:0 auto;padding:0 36px;}
+  @media(max-width:700px){.wrap{padding:0 18px;}body{font-size:15px;}}
+
+  .masthead{background:var(--teal-deep);color:#fff;padding:40px 0 44px;}
+  .brandline{font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:rgba(255,255,255,.72);}
+  .brandline .sep{color:var(--gold);padding:0 9px;}
+  .stamp{display:inline-block;margin-top:22px;border:1px solid var(--gold);color:var(--gold);
+    font-size:9.5px;letter-spacing:.22em;text-transform:uppercase;padding:6px 13px;font-weight:500;}
+  h1{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(32px,5vw,50px);
+    line-height:1.06;margin:14px 0 0;}
+  .sub{margin-top:10px;font-size:12px;letter-spacing:.13em;text-transform:uppercase;color:rgba(255,255,255,.78);}
+
+  .band{background:var(--wash);border-bottom:1px solid var(--rule);padding:26px 0;}
+  .band-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;}
+  @media(max-width:780px){.band-grid{grid-template-columns:repeat(2,1fr);}}
+  .bl{font-size:10px;letter-spacing:.19em;text-transform:uppercase;color:var(--muted);font-weight:500;}
+  .bv{font-family:'Cormorant Garamond',serif;font-size:29px;font-weight:600;color:var(--charcoal);line-height:1.15;margin-top:4px;}
+  .bn{font-size:12.5px;color:var(--muted);line-height:1.45;}
+
+  section{padding:46px 0;border-bottom:1px solid var(--rule);}
+  .kicker{font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--teal);font-weight:600;margin-bottom:12px;}
+  h2{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(24px,3.2vw,32px);
+    line-height:1.2;color:var(--charcoal);margin:0 0 16px;}
+  h3{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:20px;color:var(--charcoal);margin:26px 0 8px;}
+  p{margin:0 0 14px;max-width:780px;}
+  strong{font-weight:500;color:var(--charcoal);}
+  ul{margin:0 0 14px;padding-left:20px;max-width:780px;}
+  li{margin-bottom:8px;}
+
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin:24px 0;}
+  @media(max-width:760px){.split{grid-template-columns:1fr;}}
+  .col{border-top:2px solid var(--good);padding-top:14px;}
+  .col.dont{border-top-color:var(--alert);}
+  .col .h{font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;font-weight:600;color:var(--good);margin-bottom:10px;}
+  .col.dont .h{color:var(--alert);}
+  .col ul{padding-left:18px;margin-bottom:0;}
+  .col li{font-size:15px;}
+
+  .card{border:1px solid var(--rule);padding:20px 22px;margin-bottom:14px;}
+  .card .r{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--teal);font-weight:600;}
+  .card h4{font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:600;color:var(--charcoal);margin:4px 0 8px;}
+  .card p{font-size:15px;margin:0;}
+
+  .flag{border:2px solid var(--alert);background:var(--alert-bg);padding:20px 24px;margin:24px 0;}
+  .flag .lbl{font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--alert);font-weight:600;margin-bottom:8px;}
+  .flag p:last-child{margin-bottom:0;}
+
+  .callout{border-left:3px solid var(--gold);background:var(--wash);padding:20px 24px;margin:22px 0;}
+  .callout .lbl{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--teal-deep);font-weight:600;margin-bottom:7px;}
+  .callout p:last-child{margin-bottom:0;}
+
+  .quote{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:19px;color:var(--charcoal);
+    border-left:3px solid var(--teal);padding:2px 0 2px 18px;margin:0 0 14px;}
+
+  footer{background:var(--charcoal);color:rgba(255,255,255,.78);padding:36px 0 32px;}
+  .fm{font-family:'Cormorant Garamond',serif;font-size:24px;color:#fff;font-weight:600;}
+  .ft{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:17px;color:var(--gold);margin-top:2px;}
+  .fn{margin-top:18px;padding-top:16px;border-top:1px solid rgba(255,255,255,.16);font-size:12.5px;line-height:1.65;color:rgba(255,255,255,.6);max-width:760px;}
+</style>
+</head>
+<body>
+
+<div class="masthead">
+  <div class="wrap">
+    <div class="brandline">Verandah Properties<span class="sep">·</span>Internal — Team Use Only</div>
+    <div class="stamp">Client Working Profile</div>
+    <h1>Chris</h1>
+    <div class="sub">St. Cloud property · Agreement signed · Onboarding in progress</div>
+  </div>
+</div>
+
+<div class="band">
+  <div class="wrap">
+    <div class="band-grid">
+      <div>
+        <div class="bl">Primary Style</div>
+        <div class="bv">D</div>
+        <div class="bn">Dominance — direct, decisive, results-first</div>
+      </div>
+      <div>
+        <div class="bl">Secondary</div>
+        <div class="bv">C</div>
+        <div class="bn">Conscientiousness — written record, honors named deadlines</div>
+      </div>
+      <div>
+        <div class="bl">Low</div>
+        <div class="bv">I &amp; S</div>
+        <div class="bn">No small talk, no obligation to reply out of politeness</div>
+      </div>
+      <div>
+        <div class="bl">Channel</div>
+        <div class="bv">Email</div>
+        <div class="bn">He does not reply to texts — he answers by email</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="kicker">Read this first</div>
+    <h2>Silence is not disinterest, and brevity is not displeasure</h2>
+    <p>
+      Chris went several weeks without responding to friendly check-ins, then signed a management agreement
+      within about twenty-four hours of deciding to move. Both of those are normal for him and neither is a
+      signal about how the relationship is going.
+    </p>
+    <p>
+      <strong>He does not reply to text messages.</strong> He reads them and responds by email. Any read of
+      his responsiveness based on a text thread will be wrong — the gaps are a channel mismatch, not
+      avoidance.
+    </p>
+    <p>
+      When he does engage, he engages fast and expects us to match. His two-word reply asking for a call —
+      <em>"Now. If you can."</em> — is the clearest thing in his file. A decisive client who is ready and
+      finds us unavailable is a client we have made wait, and that is expensive with this style.
+    </p>
+
+    <div class="split">
+      <div class="col">
+        <div class="h">Do</div>
+        <ul>
+          <li>Send everything substantive by <strong>email</strong></li>
+          <li>Lead with the ask and the date — put it in the first line</li>
+          <li>Attach a reason the deadline matters, not pressure</li>
+          <li>Keep messages short; match his register</li>
+          <li>Be ready to act the moment he engages</li>
+          <li>Confirm completion in one line and move on</li>
+        </ul>
+      </div>
+      <div class="col dont">
+        <div class="h">Don't</div>
+        <ul>
+          <li>Rely on text for anything that needs a reply</li>
+          <li>Open with warm preamble before the ask</li>
+          <li>Read short replies as annoyance and over-compensate</li>
+          <li>Chase with repeated friendly check-ins — they don't work</li>
+          <li>Assume silence means he's gone</li>
+          <li>Leave an open-ended request with no date attached</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="kicker">What the record shows</div>
+    <h2>Why we're reading him this way</h2>
+
+    <h3>He moves on his own clock, then expects immediacy</h3>
+    <div class="quote">"Now." / "If you can."</div>
+    <p>
+      No greeting, no preamble, no softening. When he decided he was ready for a call, he wanted it that
+      moment. That is the defining behavior in his file.
+    </p>
+
+    <h3>He honors deadlines once they carry a specific time</h3>
+    <p>
+      He said he would return the signed agreement "in the morning" and did not. After one direct nudge with
+      a stated reason — we cannot collect the key without signed authority — he replied
+      <em>"on the way to the office and I'll turn it around before 10"</em> and delivered. Vague commitments
+      slip; specific ones hold.
+    </p>
+
+    <h3>Warmth did not move him — clarity did</h3>
+    <p>
+      Four courteous follow-ups over several weeks produced nothing. What produced action was a short,
+      no-pressure note that his file was being closed. He does not respond to being pursued; he responds when
+      something is about to be settled without him.
+    </p>
+    <div class="callout">
+      <div class="lbl">The practical version</div>
+      <p>
+        This is not a tactic to repeat for its own sake. The lesson is simply that
+        <strong>with Chris, a clear statement of what happens next outperforms a friendly reminder</strong> —
+        every time.
+      </p>
+    </div>
+
+    <h3>He gives no relational signal at all</h3>
+    <p>
+      No pleasantries returned, no emoji, nothing personal volunteered beyond logistics. This is not coldness
+      and it should not be corrected for. Responding to terseness with longer, warmer messages reads to a D
+      as wasting their time.
+    </p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="kicker">By function</div>
+    <h2>How this applies to your role</h2>
+
+    <div class="card">
+      <div class="r">Onboarding</div>
+      <h4>Email, with a date and a dependency attached</h4>
+      <p>
+        Send onboarding items by email with the deadline and the reason it matters in the first two lines —
+        "we need X by Thursday or photography moves to the following week." Avoid multi-step packets with no
+        due dates; they will sit. If something is time-critical, a text saying "sent you an email, needs a
+        reply today" is the right use of text.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="r">Maintenance &amp; Client Experience</div>
+      <h4>Recommendation, cost, deadline — in that order</h4>
+      <p>
+        Give him the bottom line first, then the detail underneath for reference. He will decide quickly and
+        will not want a discussion. Don't bury the number or the decision date below background.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="r">Leasing</div>
+      <h4>Give the recommendation, not the tour of the data</h4>
+      <p>
+        Lead with the number and the expected time to lease. The analysis goes underneath as support — he
+        may well read it, unlike some owners, but he wants the conclusion first and the evidence second.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="r">Everyone</div>
+      <h4>Never wait on him without a fallback</h4>
+      <p>
+        Anything that depends on his input needs a hard date tied to a real consequence, or a plan that works
+        without him. He is not unreliable — he is intermittent, and the schedule has to absorb that rather
+        than break on it.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section style="border-bottom:none;">
+  <div class="wrap">
+    <div class="kicker">Watch items</div>
+    <h2>Two things to keep in view</h2>
+
+    <div class="flag">
+      <div class="lbl">⚑ He has gone quiet once already, mid-process</div>
+      <p>
+        He proposed the August 1 turnover himself, then went silent for several weeks while clearing
+        furniture. Expect the same pattern during onboarding — not as a warning sign, but as a planning
+        assumption. Build dates that don't collapse if he takes ten days to answer.
+      </p>
+    </div>
+
+    <div class="callout">
+      <div class="lbl">Sample size</div>
+      <p>
+        This profile rests on a small number of short messages. The channel preference and the deadline
+        behavior are well evidenced; the rest is directional. Adjust it as the team gets real working time
+        with him.
+      </p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="fm">Verandah Properties</div>
+    <div class="ft">The marriage, not the sprint.</div>
+    <div class="fn">
+      <strong>INTERNAL USE ONLY — not to be shared outside the team.</strong> This is a working communication
+      guide based on observed correspondence, not a psychological assessment or a judgment of the client. It
+      describes how to serve him well. Adjust it as the team learns more.
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
